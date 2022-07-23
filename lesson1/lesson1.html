@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+  // //- Створити змінні. Присвоїти кожному з них значення: 'hello','owu','com', 'ua', 1, 10, -999, 123,
+  // 3.14, 2.7, 16, true, false.
+  // Вивести кожну змінну за допомогою: console.log , alert, document.write
+  //
+  // - Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person (Не об'єкт, просто за допомоги конкатенації)
+  //
+  // - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
+  //   let a = 100; let b = '100'; let c = true;
+  //
+  // - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+
+  let str = "hello";
+  let str1 = "owu";
+  let str2 = "com";
+  let str3 = "ua";
+  let num = 1;
+  let num1 = 10;
+  let num2 = -999;
+  let num3 = 123;
+  let num4 = 3.14;
+  let num5 = 2.7;
+  let num6 = 16;
+  let bool = true;
+  let bool1 = false;
+
+  console.log(str);
+  console.log(str1);
+  console.log(str2);
+  console.log(str3);
+  console.log(num);
+  console.log(num1);
+  console.log(num2);
+  console.log(num3);
+  console.log(num4);
+  console.log(num5);
+  console.log(num6);
+  console.log(bool);
+  console.log(bool1)
+
+  // alert(str);
+  // alert(str1);
+  // alert(str2);
+  // alert(str3);
+  // alert(num);
+  // alert(num1);
+  // alert(num2);
+  // alert(num3);
+  // alert(num4);
+  // alert(num5);
+  // alert(num6);
+  // alert(bool);
+  // alert(bool1);
+
+  document.write(str + " ");
+  document.write(str1 + " ");
+  document.write(str2 + " ");
+  document.write(str3 + " ");
+  document.write(num + " ");
+  document.write(num1 + " ");
+  document.write(num2 + " ");
+  document.write(num3 + " ");
+  document.write(num4 + " ");
+  document.write(num5 + " ");
+  document.write(num6 + " ");
+  document.write(bool + " ");
+  document.write(bool1 + " ");
+
+  let firstName = "Vitalii";
+  let middleName = "Viktorovich";
+  let lastName = "Vinnyk";
+  let person = firstName + "\n" + middleName + "\n" + lastName;
+  console.log(person);
+
+  let a = 100;
+  let b = '100';
+  let c = true;
+
+  console.log(typeof a);
+  console.log(typeof b);
+  console.log(typeof c);
+
+  let old = 39;
+  let name = prompt("What's your name", "Vitalii");
+  let mid = prompt("What's your middle name", "Viktorovich");
+  let years = prompt("How old are you", 39);
+  console.log("Your name is " + name);
+  console.log("Your middle name is " + mid);
+  console.log("You're " + years + " years old");
+
+</script>
+
+</body>
+</html>
