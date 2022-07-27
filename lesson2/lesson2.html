@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //- Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
+  //- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
+  //- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors.
+  // Поле "автори" - масив. Кожен автор має поля name,age
+  //- Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password.
+  // Вивести в консоль пароль кожного користувача
+
+  let array = [52, 'Java', true, 'master', 671, 'music', false, 'rain', 1240, 'Toyota'];
+  console.log(array);
+
+  let booksChildren = {title: "Buratino", pageCount: 42, genre: "Tales" };
+  let booksAdult = {title: "Three Colonels", pageCount: 198, genre: "Adventures"};
+  let booksAnimals = {title: "Rikki", pageCount: 12, genre: "About animals" };
+  console.log(booksChildren);
+  console.log(booksAdult);
+  console.log(booksAnimals);
+
+  let booksChildrenNew = {
+                          title: "Buratino",
+                          pageCount: 42,
+                          genre: "Tales",
+                          authors: [
+                            {name: "Lindgren", sex: "female"},
+                            {age: 62},
+                            {children: false}
+                          ]
+  };
+  console.log(booksChildrenNew.authors[0].sex);
+  let booksAdultNew = {
+                          title: "Three Colonels",
+                          pageCount: 198,
+                          genre: "Adventures",
+                          authors: [
+                            {name: "Kostenko"},
+                            {age: 49}
+                          ]
+  };
+  console.log(booksAdultNew.authors[1]);
+  let booksAnimalsNew = {
+                          title: "Rikki",
+                          pageCount: 12,
+                          genre: "About animals",
+                          authors: [
+                            {name: "Kusto"},
+                            {age: 89}
+                          ]
+  };
+  console.log(booksAnimalsNew.authors[0]);
+
+
+  // booksAdultNew, booksAnimalsNew
+
+  let objects = [
+    {name: 'Adam', username: 'clown', password: 'sad321'},
+    {name: 'Adam', username: 'clown', password: 'sad321'},
+    {name: 'Arnold', username: 'human', password: 'rfedsaf'},
+    {name: 'Michael', username: 'bolt', password: '4o14y1'},
+    {name: 'Alex', username: 'first', password: 'sssx.fd'},
+    {name: 'Lewis', username: 'champion', password: 's322drd'},
+    {name: 'Eddie', username: 'owner', password: 'lugvf66'},
+    {name: 'Jean', username: 'fia', password: '7643fdss'},
+    {name: 'Max', username: 'redbull', password: '@dft_dd'},
+    {name: 'Charles', username: 'best', password: 'utcsw45fcd'}
+  ];
+  //console.table(objects,["password"]);
+  console.log(objects[0].password);
+  console.log(objects[1].password);
+  console.log(objects[2].password);
+  console.log(objects[3].password);
+  console.log(objects[4].password);
+  console.log(objects[5].password);
+  console.log(objects[6].password);
+  console.log(objects[7].password);
+  console.log(objects[8].password);
+  console.log(objects[9].password);
+</script>
+
+</body>
+</html>

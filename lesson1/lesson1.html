@@ -94,7 +94,7 @@
   let old = 39;
   let name = prompt("What's your name", "Vitalii");
   let mid = prompt("What's your middle name", "Viktorovich");
-  let years = prompt("How old are you", 39);
+  let years = +prompt("How old are you", 39); // переводим к числовому значению с помощью +
   console.log("Your name is " + name);
   console.log("Your middle name is " + mid);
   console.log("You're " + years + " years old");
