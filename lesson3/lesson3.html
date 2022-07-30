@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // - Є змінна х, якій ви надаєте довільне числове значення.
+  //   Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'.
+  //   Перевірте  скрипт при a, що дорівнює 1, 0, -3
+
+  let x = 851;
+  if (x != 0) {
+    console.log("Right");
+  } else {
+    console.log("Incorrect");
+  }
+
+  let a = 1;
+  if (a != 0) {
+    console.log("Right");
+  } else {
+    console.log("Incorrect");
+  }
+
+  a = 0;
+  if (a != 0) {
+    console.log("Right");
+  } else {
+    console.log("Incorrect");
+  }
+
+  a = -3;
+  if (a != 0) {
+    console.log("Right");
+  } else {
+    console.log("Incorrect");
+  }
+  // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить,
+  // до якої четверті години попадає число (в першу, другу, третю или четверту частину години).
+
+  let time = 30;
+  let timeQuarter1 = 15;
+  let timeQuarter2 = 30;
+  let timeQuarter3 = 45;
+  let timeQuarter4 = 59;
+
+  if (time >= 0 && time <= timeQuarter1) {
+    console.log("The number is belong for the first part of hour");
+  }
+  if (time > timeQuarter1 && time <= timeQuarter2) {
+    console.log("The number is belong for the second part of hour");
+  }
+  if (time > timeQuarter2 && time <= timeQuarter3) {
+    console.log("The number is belong for the third part of hour");
+  }
+  if (time > timeQuarter3 && time <= timeQuarter4) {
+    console.log("The number is belong for the fourth part of hour");
+  }
+
+  // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду)
+  // місяця потрапляє це число (у першу, другу чи третю).
+
+  let day = 1;
+  let decade1 = 10;
+  let decade2 = 20;
+  let decade3 = 31;
+    if(day <= decade1 ){
+    console.log("The date is belong for first decade");
+  }
+  if(day > decade1 && day <= decade2){
+    console.log("The date is belong for second decade");
+  }
+  if(day > decade2 && day <= decade3){
+    console.log("The date is belong for third decade");
+  }
+
+  // - Скласти розклад на тиждень за домопоги switch.
+  // Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано
+  // на цей день (можна замість плану на день, назву дня англійською).
+
+  let timetable = prompt("Choose week day. please");
+
+  switch (timetable){
+    case "Monday":
+    case "monday":
+      console.log("Working day");
+      break;
+
+    case "Tuesday":
+    case "tuesday":
+      console.log("Go for a gym");
+      break;
+
+    case "Wednesday":
+    case "wednesday":
+      console.log("Meeting with friends");
+      break;
+
+    case "Thursday":
+    case "thursday":
+      console.log("Time for a shopping centre");
+      break;
+
+    case "Friday":
+    case "friday":
+      console.log("Relax time in cafe after working week");
+      break;
+
+    case "Saturday":
+    case "saturday":
+      console.log("Go to the cinema");
+      break;
+
+    case "Sunday":
+    case "sunday":
+      console.log("Watching F1 translation on TV broadcast");
+      break;
+
+    default:
+      console.log("Enter your choice correctly, please");
+  }
+
+  //   - Користувач вводить або має два числа.
+  //     Потрібно знайти та вивести максимальне число з тих двох .
+  //     Також потрібно врахувати коли введені рівні числа.
+
+  let d = 5;
+  let g = 185;
+
+  if(d < g){
+    console.log("Max number is " + g);
+  }
+  if(d > g){
+    console.log("Max number is " + d);
+  }
+  if(d === g){
+    console.log("Input numbers are equal");
+  }
+
+  //   - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно).
+  //   Напишіть код який, за допомоги  оператора || буде присвоювати змінній х значення "default"
+  //   якщо значення змінної х являється falsy (хибноподыбне, тобто кастується до false)
+
+  x = prompt("Enter something below") || "default";
+  console.log(x);
+
+</script>
+
+</body>
+</html>
