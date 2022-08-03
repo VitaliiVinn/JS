@@ -6,7 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-</head>
+  <link>
 <body>
 <script>
   // - Є змінна х, якій ви надаєте довільне числове значення.
@@ -146,7 +146,8 @@
   //   Напишіть код який, за допомоги  оператора || буде присвоювати змінній х значення "default"
   //   якщо значення змінної х являється falsy (хибноподыбне, тобто кастується до false)
 
-  x = prompt("Enter something below") || "default";
+
+  x = NaN || "default";
   console.log(x);
 
 </script>
