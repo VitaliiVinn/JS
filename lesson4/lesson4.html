@@ -17,7 +17,8 @@
   </style>
 </head>
 <body>
-<script>
+<!--<script src = "lesson4.js">-->
+  <script>
   // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 
   let a = [
@@ -161,12 +162,12 @@
     {name: 'max', age: 31, status: true}
   ];
 
-  for (let r = 0; r < users.length; r++) {
-    if (users[r].status) {
-      console.log(users[r]);
+  for (const statusOf of users) {
+    if (statusOf.status) {
+      console.log(statusOf);
     }
   }
-  console.log();
+  console.log("-------------------------------");
 
   // за допомоги циклу вивести:
   //   - користувачів зі статусом false
@@ -212,7 +213,7 @@
       console.log(users2[r2]);
     }
   }
-  
+
 </script>
 
 </body>

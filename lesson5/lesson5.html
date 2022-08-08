@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //- створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+  function sqrRectangle(a, b) {
+    let res = a * b;
+    return res;
+  }
+
+  console.log(sqrRectangle(20, 30));
+
+  // - створити функцію яка обчислює та повертає площу кола з радіусом r
+  function sqrCircle(c, r) {
+    return c * r;
+  }
+
+  let c = Math.PI;
+  let r1 = 2
+  let r = Math.pow(r1, 2);
+  console.log(sqrCircle(c, r));
+
+  // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+  function sqrCylinder(h, r) {
+    return 2 * d * Math.pow(e, 2) + 2 * d * e * h;
+  }
+
+  let d = Math.PI;
+  let e = 3; // radius
+  let h = 4; // height
+  console.log(sqrCylinder(h, r));
+
+  // - створити функцію яка приймає масив та виводить кожен його елемент
+  function everyElementOutput(array) {
+    return array;
+  }
+
+  let array = [
+    {city: "Tokyo"},
+    {city: "Monaco"},
+    {city: "Montreal"},
+    {city: "Abu-Dhabi"},
+    {city: "Marselle"},
+    {city: "Lebandon"},
+    {city: "Jebel Ali"},
+    {city: "New Yourk"},
+    {city: "Lima"},
+  ];
+
+  console.log(everyElementOutput(array));
+
+  // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+
+  function paragraph() {
+    console.log(arguments);
+    document.write(`<p>
+    ${arguments[0]}
+  </p>`);
+  }
+
+  paragraph("Yesterday, all my troubles seemed so far away. Now it looks as though they're here to stay.");
+
+  // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+
+  function newFunction() {
+    console.log(arguments);
+    document.write(`<ul>
+   <li>${arguments[0]}}</li>
+   <li>${arguments[0]}</li>
+   <li>${arguments[0]}</li>
+    </ul>`);
+  }
+
+  newFunction("Shine like a star");
+
+  // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
+  // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
+  function withArg() {
+    console.log(arguments);
+    let a = 0;
+    while (a < 3) {
+      document.write(`<ul>
+   <li>${arguments[a]}</li>
+    </ul>`);
+      a++;
+    }
+  }
+
+  withArg("Total eclipse", "Total eclipse", "Total eclipse");
+
+  // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
+  function plainElem() {
+    plain = [true, 34, "mentor", false, 85];
+    let p = 0;
+    while (p < plain.length) {
+      document.write(`<ul>
+<li>${plain[p]}</li>
+</ul>`);
+      p++;
+    }
+    return plain;
+  }
+
+  console.log(plainElem(true, 34, "mentor", false, 85));
+
+  // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age ,
+  // та виводить їх в документ. Для кожного об'єкту окремий блок.
+
+  function arPrinter(array) {
+    for (const item of array) {
+      document.write(`<div>${item.id}--  ${item.name}--  ${item.age}</div>`);
+    }
+    console.log(array);
+  }
+
+  let arObjects = [
+    {id: "figaro", name: "John", age: 52},
+    {id: "muslim", name: "Musa", age: 12},
+    {id: "hanuka", name: "Jeetu", age: 82},
+    {id: "fuji", name: "Ibragim", age: 26},
+    {id: "arlekino", name: "Mohhamed", age: 31},
+    {id: "oracle", name: "Silvia", age: 42},
+  ];
+
+  arPrinter(arObjects);
+
+
+  // - створити функцію яка повертає найменьше число з масиву
+
+  let arOb = [85, 25, 6, -95, 20, 64, 254, -63, 7];
+  let minNumber = (array1) => {
+
+    let minNum = array1[0];
+    for (const item of array1) {
+      if (minNum > item) {
+        minNum = item;
+      }
+    }
+    return minNum;
+  }
+
+  console.log(minNumber(arOb));
+  // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його.
+  // Приклад [1,2,10]->13
+
+  let arraObj = [105, 5, 6, -5, 20, 6, 4, -3, 7];
+
+  function sumElem(array2){
+    let sum = 0;
+    for(let y = 0; y < array2.length; y++){
+      sum += array2[y];
+    }
+    return sum;
+  }
+  console.log(sumElem(arraObj));
+
+
+</script>
+</body>
+</html>
