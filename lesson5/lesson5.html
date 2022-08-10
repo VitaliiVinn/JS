@@ -14,14 +14,12 @@
     let res = a * b;
     return res;
   }
-
   console.log(sqrRectangle(20, 30));
 
   // - створити функцію яка обчислює та повертає площу кола з радіусом r
   function sqrCircle(c, r) {
     return c * r;
   }
-
   let c = Math.PI;
   let r1 = 2
   let r = Math.pow(r1, 2);
@@ -39,6 +37,7 @@
 
   // - створити функцію яка приймає масив та виводить кожен його елемент
   function everyElementOutput(array) {
+
     return array;
   }
 
@@ -71,8 +70,9 @@
 
   function newFunction() {
     console.log(arguments);
+
     document.write(`<ul>
-   <li>${arguments[0]}}</li>
+   <li>${arguments[0]}</li>
    <li>${arguments[0]}</li>
    <li>${arguments[0]}</li>
     </ul>`);
@@ -83,34 +83,27 @@
   // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
   // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
-  function withArg() {
-    console.log(arguments);
-    let a = 0;
-    while (a < 3) {
-      document.write(`<ul>
-   <li>${arguments[a]}</li>
-    </ul>`);
-      a++;
+  function withArg(text, count) {
+    document.write(`<ul>`);
+       for(let i = 0; i < count; i++){
+      document.write(`<li>${text}</li>`);
     }
+    document.write(`</ul>`);
   }
 
-  withArg("Total eclipse", "Total eclipse", "Total eclipse");
+  withArg("Total Eclipse", 5);
 
   // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-
-  function plainElem() {
-    plain = [true, 34, "mentor", false, 85];
-    let p = 0;
-    while (p < plain.length) {
-      document.write(`<ul>
-<li>${plain[p]}</li>
-</ul>`);
-      p++;
+  let plain = [true, 34, "mentor", false, 85];
+  function plainElem(arr) {
+    document.write(`<ul>`);
+    for (let nord of arr) {
+      document.write(`<li>${nord}</li>`);
     }
-    return plain;
+    document.write(`</ul>`);
   }
 
-  console.log(plainElem(true, 34, "mentor", false, 85));
+plainElem(plain);
 
   // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age ,
   // та виводить їх в документ. Для кожного об'єкту окремий блок.
