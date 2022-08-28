@@ -50,6 +50,9 @@
   let strDirty = ' dirty string   ';
   console.log(strDirty.replace(/ +/g, ' ').trim());
 
+  let s = strDirty.trim();
+  console.log(s);
+
   // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
   //   let str = 'Ревуть воли як ясла повні';
   // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
@@ -80,18 +83,18 @@
   // sortNums(nums,'descending') // [21,11,3]
 
   let nums = [11, 21, 3];
-  let nums2 = [11, 21, 3];
 
-  function sortNums(direction) {
-    let ascending = nums.sort((a, b) => a - b);
-    console.log(ascending);
-
-    let descending = nums.sort((c, d) => d - c);
-    console.log(descending);
-
+  const sortNums = (direction, arr) => {
+    if (direction === 'ascending') {
+      arr.sort((a, b) => a - b);
+    } else if (direction === 'descending') {
+      arr.sort((a, b) => b - a);
+    }
+    return arr;
   }
 
-  sortNums(nums);
+  console.log(sortNums('ascending', nums));
+  console.log(sortNums('descending', nums));
 
 
   // - є масив
@@ -118,7 +121,7 @@
   coursesAndDurationArray.sort((title1, title2) => title2.monthDuration - title1.monthDuration);
   console.log(coursesAndDurationArray);
 
-  let filter = coursesAndDurationArray.filter(value =>  value.monthDuration > 5);
+  let filter = coursesAndDurationArray.filter(value => value.monthDuration > 5);
   console.log(filter);
 
   // описати колоду карт
@@ -135,13 +138,46 @@
   // }
 
   let cards = [
-       {cardSuit: 'spade', value: '6', color: 'black'},
-      {cardSuit: 'spade', value: 'ace', color: 'black'},
-      {cardSuit: 'diamonds', value: '6', color: 'red'},
-     {cardSuit: 'heart', value: '9', color: 'red'},
-     {cardSuit: 'clubs', value: '9', color: 'black'},
-      {cardSuit: 'clubs', value: 'jack', color: 'black'},
-     {cardSuit: 'clubs', value: 'queen', color: 'black'},
+    {cardSuit: 'spade', value: '6', color: 'black'},
+    {cardSuit: 'spade', value: '7', color: 'black'},
+    {cardSuit: 'spade', value: '8', color: 'black'},
+    {cardSuit: 'spade', value: '9', color: 'black'},
+    {cardSuit: 'spade', value: '10', color: 'black'},
+    {cardSuit: 'spade', value: 'joker', color: 'black'},
+    {cardSuit: 'spade', value: 'jack', color: 'black'},
+    {cardSuit: 'spade', value: 'queen', color: 'black'},
+    {cardSuit: 'spade', value: 'king', color: 'black'},
+    {cardSuit: 'spade', value: 'ace', color: 'black'},
+    {cardSuit: 'diamonds', value: '6', color: 'red'},
+    {cardSuit: 'diamonds', value: '7', color: 'red'},
+    {cardSuit: 'diamonds', value: '8', color: 'red'},
+    {cardSuit: 'diamonds', value: '9', color: 'red'},
+    {cardSuit: 'diamonds', value: '10', color: 'red'},
+    {cardSuit: 'diamonds', value: 'joker', color: 'red'},
+    {cardSuit: 'diamonds', value: 'jack', color: 'red'},
+    {cardSuit: 'diamonds', value: 'queen', color: 'red'},
+    {cardSuit: 'diamonds', value: 'king', color: 'red'},
+    {cardSuit: 'diamonds', value: 'ace', color: 'red'},
+    {cardSuit: 'heart', value: '6', color: 'red'},
+    {cardSuit: 'heart', value: '7', color: 'red'},
+    {cardSuit: 'heart', value: '8', color: 'red'},
+    {cardSuit: 'heart', value: '9', color: 'red'},
+    {cardSuit: 'heart', value: '10', color: 'red'},
+    {cardSuit: 'heart', value: 'joker', color: 'red'},
+    {cardSuit: 'heart', value: 'jack', color: 'red'},
+    {cardSuit: 'heart', value: 'queen', color: 'red'},
+    {cardSuit: 'heart', value: 'king', color: 'red'},
+    {cardSuit: 'heart', value: 'ace', color: 'red'},
+    {cardSuit: 'clubs', value: '6', color: 'black'},
+    {cardSuit: 'clubs', value: '7', color: 'black'},
+    {cardSuit: 'clubs', value: '8', color: 'black'},
+    {cardSuit: 'clubs', value: '9', color: 'black'},
+    {cardSuit: 'clubs', value: '10', color: 'black'},
+    {cardSuit: 'clubs', value: 'joker', color: 'black'},
+    {cardSuit: 'clubs', value: 'jack', color: 'black'},
+    {cardSuit: 'clubs', value: 'queen', color: 'black'},
+    {cardSuit: 'clubs', value: 'king', color: 'black'},
+    {cardSuit: 'clubs', value: 'ace', color: 'black'}
   ];
 
   let filterSpade = cards.filter(value => value.cardSuit === "spade" && value.value === "ace");
@@ -156,7 +192,8 @@
   let filterDiamonds = cards.filter(value => value.cardSuit === "diamonds");
   console.log(filterDiamonds);
 
-  let filterClubs = cards.filter(value => value.cardSuit === "clubs" && value.value >= '9');
+  let filterClubs = cards.filter(value => value.cardSuit === "clubs" && value.value > '8' || value.value === '10' &&
+  value.cardSuit === 'clubs');
   console.log(filterClubs);
 
 
@@ -171,28 +208,56 @@
 
   let cardsAdditional = [
     {cardSuit: 'spade', value: '6', color: 'black'},
+    {cardSuit: 'spade', value: '7', color: 'black'},
+    {cardSuit: 'spade', value: '8', color: 'black'},
+    {cardSuit: 'spade', value: '9', color: 'black'},
+    {cardSuit: 'spade', value: '10', color: 'black'},
+    {cardSuit: 'spade', value: 'joker', color: 'black'},
+    {cardSuit: 'spade', value: 'jack', color: 'black'},
+    {cardSuit: 'spade', value: 'queen', color: 'black'},
+    {cardSuit: 'spade', value: 'king', color: 'black'},
     {cardSuit: 'spade', value: 'ace', color: 'black'},
     {cardSuit: 'diamonds', value: '6', color: 'red'},
+    {cardSuit: 'diamonds', value: '7', color: 'red'},
+    {cardSuit: 'diamonds', value: '8', color: 'red'},
+    {cardSuit: 'diamonds', value: '9', color: 'red'},
+    {cardSuit: 'diamonds', value: '10', color: 'red'},
+    {cardSuit: 'diamonds', value: 'joker', color: 'red'},
+    {cardSuit: 'diamonds', value: 'jack', color: 'red'},
+    {cardSuit: 'diamonds', value: 'queen', color: 'red'},
+    {cardSuit: 'diamonds', value: 'king', color: 'red'},
+    {cardSuit: 'diamonds', value: 'ace', color: 'red'},
+    {cardSuit: 'heart', value: '6', color: 'red'},
+    {cardSuit: 'heart', value: '7', color: 'red'},
+    {cardSuit: 'heart', value: '8', color: 'red'},
     {cardSuit: 'heart', value: '9', color: 'red'},
+    {cardSuit: 'heart', value: '10', color: 'red'},
+    {cardSuit: 'heart', value: 'joker', color: 'red'},
+    {cardSuit: 'heart', value: 'jack', color: 'red'},
+    {cardSuit: 'heart', value: 'queen', color: 'red'},
+    {cardSuit: 'heart', value: 'king', color: 'red'},
+    {cardSuit: 'heart', value: 'ace', color: 'red'},
+    {cardSuit: 'clubs', value: '6', color: 'black'},
+    {cardSuit: 'clubs', value: '7', color: 'black'},
+    {cardSuit: 'clubs', value: '8', color: 'black'},
     {cardSuit: 'clubs', value: '9', color: 'black'},
+    {cardSuit: 'clubs', value: '10', color: 'black'},
+    {cardSuit: 'clubs', value: 'joker', color: 'black'},
     {cardSuit: 'clubs', value: 'jack', color: 'black'},
     {cardSuit: 'clubs', value: 'queen', color: 'black'},
+    {cardSuit: 'clubs', value: 'king', color: 'black'},
+    {cardSuit: 'clubs', value: 'ace', color: 'black'}
   ];
 
   let reduce = cardsAdditional.reduce(function (accumulator, index) {
 
-    if(index.cardSuit === 'spade'){
+    if (index.cardSuit === 'spade') {
       accumulator.spades.push(index);
-    }
-    else if(index.cardSuit === 'diamonds') {
+    } else if (index.cardSuit === 'diamonds') {
       accumulator.diamonds.push(index);
-    }
-
-    else if(index.cardSuit === 'heart') {
+    } else if (index.cardSuit === 'heart') {
       accumulator.heart.push(index);
-    }
-
-    else if(index.cardSuit === 'clubs') {
+    } else if (index.cardSuit === 'clubs') {
       accumulator.clubs.push(index);
     }
 

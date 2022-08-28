@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  //   На странице post-details.html:
+  // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
+  // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+  //
+
+  let newPageDiv = document.createElement('div');
+  newPageDiv.classList.add('newPageDiv');
+  document.body.appendChild(newPageDiv);
+
+
+  let postOf = JSON.parse(localStorage.getItem('keyId'));
+  console.log(postOf);
+
+  let postNameDiv = document.createElement('div');
+  postNameDiv.innerHTML = `<h3>UserId: ${postOf.userId}</h3>
+                            <h3>Id: ${postOf.id}</h3>
+                          <h3>Title: ${postOf.title}</h3>
+                          <h3>Body: ${postOf.body}</h3>`;
+
+  postNameDiv.style.background = 'lightgreen';
+  postNameDiv.style.position = 'row';
+  document.body.append(postNameDiv);
+  console.log(postNameDiv);
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${postOf.id}/comments`)
+    .then(response => {
+      return response.json()
+    })
+    .then(comments => comments.forEach(comm => {
+
+
+      let divCom = document.createElement('div');
+
+      divCom.innerHTML = `<h3>PostId: ${comm.postId}</h3>
+                            <h3>Id: ${comm.id}</h3>
+                            <h3>Name: ${comm.name}</h3>
+                            <h3>Email: ${comm.email}</h3>
+                            <h3>Body: ${comm.body}</h3>`;
+
+      divCom.style.background = 'lightblue';
+
+      document.body.append(divCom);
+
+
+    }));
+
+
+</script>
+
+</body>
+</html>
