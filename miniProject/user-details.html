@@ -7,8 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  <link rel="stylesheet" href="../css/project.css">
-
 </head>
 <body>
 
@@ -45,6 +43,7 @@
                           <p>bs: ${user.company.bs}</p>`;
 
   newDiv.style.fontSize = '30px';
+  newDiv.style.marginLeft = '15px';
   document.body.append(newDiv);
 
   let button = document.createElement('button');
@@ -54,6 +53,9 @@
   button.style.marginLeft = '5%';
   document.body.appendChild(button);
 
+  let blocj = document.createElement('div');
+  document.body.appendChild(blocj);
+
   button.onclick = () => {
 
     fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
@@ -62,23 +64,24 @@
       })
       .then(data => data.forEach(post => {
 
-        let div = document.createElement('div');
-
+        let r = 0;
         let divPost = document.createElement('div');
         divPost.innerHTML = `<h2>${post.title}</h2>`;
-        div.style.marginLeft = '2%';
-        div.appendChild(divPost);
 
-        document.body.append(div);
+          divPost.style.display = 'inline-block';
+          divPost.style.width = '14%';
+          divPost.style.marginTop = '10px';
+          divPost.style.marginLeft = '5%';
 
         let buttonPost = document.createElement('button');
-
         buttonPost.innerText = 'Info details';
         buttonPost.style.fontSize = '25px';
-        buttonPost.style.width = '90%';
-        buttonPost.style.marginLeft = '5%';
+        buttonPost.style.width = '100%';
+        buttonPost.style.marginBottom= '3px';
 
-        document.body.appendChild(buttonPost);
+        divPost.appendChild(buttonPost);
+
+        blocj.appendChild(divPost);
 
         button.disabled = true;
 
@@ -89,7 +92,6 @@
           localStorage.setItem('keyId', JSON.stringify(post));
 
         }
-
 
       }))
 

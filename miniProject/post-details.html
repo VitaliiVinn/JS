@@ -30,9 +30,15 @@
                           <h3>Body: ${postOf.body}</h3>`;
 
   postNameDiv.style.background = 'lightgreen';
-  postNameDiv.style.position = 'row';
+  postNameDiv.style.marginLeft = '20px';
+  postNameDiv.style.marginRight = '5px';
+
   document.body.append(postNameDiv);
   console.log(postNameDiv);
+
+  let com = document.createElement('div');
+  document.body.appendChild(com);
+
 
   fetch(`https://jsonplaceholder.typicode.com/posts/${postOf.id}/comments`)
     .then(response => {
@@ -50,8 +56,14 @@
                             <h3>Body: ${comm.body}</h3>`;
 
       divCom.style.background = 'lightblue';
+      divCom.style.marginInline = '5px';
+      divCom.style.display = 'inline-block';
+      divCom.style.width = '23.75%';
+      // divCom.style.marginTop = '10px';
+      divCom.style.marginLeft = '20px';
+      divCom.style.marginBottom = '20px';
 
-      document.body.append(divCom);
+      com.appendChild(divCom);
 
 
     }));

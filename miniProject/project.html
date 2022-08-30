@@ -7,8 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  <link rel="stylesheet" href="../css/project.css">
-
 </head>
 <body>
 
@@ -19,6 +17,9 @@
   // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html,
   // котра має детальну інфорацію про об'єкт на який клікнули
 
+  let genDiv = document.createElement('div');
+  genDiv.style.width = "100%";
+  document.body.appendChild(genDiv);
 
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => {
@@ -28,28 +29,31 @@
 
       let div = document.createElement('div');
       div.innerHTML = `<p>${user.id} - ${user.name}</p>`;
-      div.style.fontSize = '30px';
-      // div.style.display = "flex";
-      // div.style.flexDirection = "column";
-      // div.style.flexWrap = "wrap";
-      // div.style.display = "inline-block";
-      div.style.background = "yellow";
-      div.style.marginLeft = '2%';
-      document.body.append(div);
+
+        div.style.fontSize = '30px';
+        div.style.background = "yellow";
+        div.style.marginLeft = '2%';
+        div.style.marginRight = '2%';
+        div.style.width = '45%';
+        div.style.display = 'inline-block';
+        div.style.marginBottom = '10px';
 
       let button = document.createElement('button');
       button.innerText = 'Click for details';
       button.style.fontSize = '25px';
-      button.style.width = '30%';
-      button.style.marginLeft = '2%';
-      document.body.appendChild(button);
+      button.style.marginBottom = 'none';
+      div.appendChild(button);
+
+      genDiv.appendChild(div);
 
       button.onclick = () => {
 
         document.location.href = `user-details.html?=${user.id}`;
 
         localStorage.setItem('userId', JSON.stringify(user));
+
       }
+
 
     }));
 
